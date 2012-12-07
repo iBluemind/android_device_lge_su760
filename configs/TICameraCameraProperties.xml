@@ -76,7 +76,7 @@
 <prop-framerate-range-values>(10000,10000),(10000,15000),(10000,20000),(10000,30000)</prop-framerate-range-values>
 <prop-flash-mode-default>off</prop-flash-mode-default>
 <prop-exif-make>LG Electronics</prop-exif-make>
-<prop-exif-model>LG-P920</prop-exif-model>
+<prop-exif-model>LG-SU760</prop-exif-model>
 </CameraInstance>
 <CameraInstance>
 <prop-camera-name>SecondaryCamera</prop-camera-name>
@@ -152,7 +152,7 @@
 <prop-framerate-range-default>20000,30000</prop-framerate-range-default>
 <prop-framerate-range-values>(15000,15000),(15000,20000),(20000,30000)</prop-framerate-range-values>
 <prop-exif-make>LG Electronics</prop-exif-make>
-<prop-exif-model>LG-P920</prop-exif-model>
+<prop-exif-model>LG-SU760</prop-exif-model>
 </CameraInstance>
 <CameraInstance>
 <prop-camera-name>DualCamera</prop-camera-name>
@@ -227,6 +227,6 @@
 <prop-framerate-range-values>(10000,15000),(10000,20000),(20000,30000)</prop-framerate-range-values>
 <prop-flash-mode-default>off</prop-flash-mode-default>
 <prop-exif-make>LG Electronics</prop-exif-make>
-<prop-exif-model>LG-P920</prop-exif-model>
+<prop-exif-model>LG-SU760</prop-exif-model>
 </CameraInstance>
 </CameraRoot>

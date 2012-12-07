@@ -1,16 +1,13 @@
-USE_CAMERA_STUB := false
-BOARD_USES_TI_CAMERA_HAL := true
-
 # inherit from the proprietary version
--include vendor/lge/p920/BoardConfigVendor.mk
+-include vendor/lge/su760/BoardConfigVendor.mk
 
-#TARGET_SPECIFIC_HEADER_PATH := device/lge/p920/include
+#TARGET_SPECIFIC_HEADER_PATH := device/lge/su760/include
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOARD_PLATFORM := omap4
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_BOOTLOADER_BOARD_NAME := p920
+TARGET_BOOTLOADER_BOARD_NAME := su760
 TARGET_CPU_SMP := true
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_ARCH_VARIANT_CPU := cortex-a9
@@ -23,7 +20,7 @@ BOARD_USES_UBOOT_MULTIIMAGE := true
 BOARD_UBOOT_ENTRY := 0x80008000
 BOARD_UBOOT_LOAD := 0x80008000
 
-TARGET_PREBUILT_KERNEL := device/lge/p920/kernel
+TARGET_PREBUILT_KERNEL := device/lge/su760/kernel
 
 ## Ignore --wipe_data sent by the bootloader
 BOARD_RECOVERY_ALWAYS_WIPES := true
@@ -35,16 +32,20 @@ BOARD_HAS_NO_MISC_PARTITION := true
 
 TARGET_RECOVERY_PRE_COMMAND := "/system/bin/setup-recovery"
 
-TARGET_BOOTLOADER_BOARD_NAME := p920
+TARGET_BOOTLOADER_BOARD_NAME := su760
 
 BOARD_USES_ALSA_AUDIO := true
 BOARD_USES_ALSA_UTILS := true
 BOARD_USES_TI_OMAP_MODEM_AUDIO := true
 
-BOARD_EGL_CFG := device/lge/p920/egl.cfg
+BOARD_EGL_CFG := device/lge/su760/egl.cfg
 
-BOARD_VOLD_MAX_PARTITIONS := 16
+BOARD_VOLD_MAX_PARTITIONS := 17
+BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1p1
+BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/platform/mmci-omap-hs.1/by-name/fat
+BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/platform/mmci-omap-hs.1/by-name/fat
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
+BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 
 TARGET_USES_GL_VENDOR_EXTENSIONS := false
 
@@ -58,28 +59,19 @@ WIFI_DRIVER_MODULE_NAME     := "tiwlan_drv"
 WIFI_FIRMWARE_LOADER        := "wlan_loader"
 
 OMAP_ENHANCEMENT := true
-
-ifdef OMAP_ENHANCEMENT
 COMMON_GLOBAL_CFLAGS += -DOMAP_ENHANCEMENT -DTARGET_OMAP4 
-endif
 
+USE_CAMERA_STUB := false
 BOARD_USES_TI_CAMERA_HAL := true
 HARDWARE_OMX := true
 #FW3A := true
 #ICAP := true
 #IMAGE_PROCESSING_PIPELINE := true
-ifdef HARDWARE_OMX
+
 OMX_VENDOR := ti
 OMX_VENDOR_WRAPPER := TI_OMX_Wrapper
 BOARD_OPENCORE_LIBRARIES := libOMX_Core
 BOARD_OPENCORE_FLAGS := -DHARDWARE_OMX=1
-endif
-
-#BOARD_NEEDS_CUTILS_LOG := true
-
-BUILD_FM_RADIO := true
-FM_CHR_DEV_ST := true
-BUILD_TI_FM_APPS := true
 
 # Enable surfaceflinger bypass (still not ready)
 #COMMON_GLOBAL_CFLAGS += -DUSE_COMPOSITION_BYPASS

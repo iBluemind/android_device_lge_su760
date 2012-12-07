@@ -1,5 +1,5 @@
 #
-# system.prop for p920
+# system.prop for su760
 #
 
 ## Enable OMAP stuffs
@@ -8,13 +8,15 @@ com.ti.omap_enhancement=true
 ## Wifi interface name
 wifi.interface=tiwlan0
 
+## CM toggle for TI Hotspot
+wifi.hotspot.ti=true
+
 # We can afford the 32m
 dalvik.vm.heapsize=32m
 
 # hold precise GC data, and use SMP
 dalvik.vm.dexopt-flags=m=y,u=n
-
-ro.sf.lcd_density=240
+dalvik.vm.dexopt-data-only=1
 
 ## Radio stuffs
 ro.telephony.call_ring.multiple=false
@@ -23,9 +25,6 @@ ro.telephony.call_ring.absent=true
 ro.telephony.ril_class=lgestar
 rild.libpath=/system/lib/lge-ril.so
 mobiledata.interfaces=rmnet0
-
-ro.opengles.version=131072
-dalvik.vm.dexopt-data-only=1
 
 ro.com.google.clientidbase=android-lge
 ro.com.google.clientidbase.ms=android-lge
@@ -37,13 +36,14 @@ ro.com.google.clientidbase.am=android-lge
 omap.audio.mic.main=AMic0
 omap.audio.mic.sub=AMic1
 omap.audio.power=HQ
-modem.hand.voice.multimic=Yes
 alsa.mixer.playback.master=DAC2 Analog
 alsa.mixer.capture.master=Analog
+modem.hand.voice.multimic=Yes
 
 ## Add additional storage expansion
 ro.additionalmounts=/mnt/emmc
 ro.vold.switchablepair=/mnt/sdcard,/mnt/emmc
 
-## CM toggle for TI Hotspot
-wifi.hotspot.ti=true
+ro.opengles.version=131072
+ro.sf.lcd_density=240
+
