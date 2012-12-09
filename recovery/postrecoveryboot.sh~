@@ -9,7 +9,7 @@ sleep 2
 /sbin/insmod /modules/st_drv.ko
 
 ## Clear "boot-recovery...enable-wipe" flag
-# echo "518 1 1" > /sys/kernel/kobject_lge_nvdata/dynamic_nvdata_raw_write
+echo "518 1 1" > /sys/kernel/kobject_lge_nvdata/dynamic_nvdata_raw_write
 
 ## Enable USB. WTF, JSON? Really??
 echo '{ "personality" : 90510, "attached" : true, "configured" : true, "high-speed" : true }' > /sys/devices/platform/musb_hdrc/gadget/state

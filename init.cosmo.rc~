@@ -342,7 +342,7 @@ on fs
     mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/system /system wait ro barrier=1
     mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/userdata /data wait noatime nosuid nodev barrier=1 noauto_da_alloc
     mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/cache /cache wait noatime nosuid nodev barrier=1
-    mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/misc /misc wait noatime nosuid nodev barrier=1
+    mount ext4 /dev/block/platform/omap/omap_hsmmc.1/by-name/misc /misc nosuid nodev noatime
 
     ## The sensor blobs use this for calibration
     mkdir /log
