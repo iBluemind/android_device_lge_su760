@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+$(call inherit-product, device/common/gps/gps_eu.mk)
+
 DEVICE_PACKAGE_OVERLAYS := device/lge/su760/overlay
 TARGET_SPECIFIC_HEADER_PATH := device/lge/su760/include
 
