@@ -26,7 +26,7 @@ LOCAL_PATH := $(call my-dir)
 # if some modules are built directly from this directory (not subdirectories),
 # their rules should be written here.
 
-ifneq ($(filter p940,$(TARGET_DEVICE)),)
+ifneq ($(filter su760,$(TARGET_DEVICE)),)
 
 ifneq ($(TARGET_SIMULATOR),true)
 include $(call all-makefiles-under,$(LOCAL_PATH))

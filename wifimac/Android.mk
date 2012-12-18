@@ -13,7 +13,7 @@
 # limitations under the License.
 
 
-ifneq ($(filter p940, $(TARGET_BOOTLOADER_BOARD_NAME)),)
+ifneq ($(filter su760, $(TARGET_BOOTLOADER_BOARD_NAME)),)
 
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)

@@ -38,6 +38,16 @@
 #for GCX
 /dev/gcioctl              0666   system     system
 
+#for NV
+/dev/block/mmcblk0p2	  0660   system     media_rw
+/dev/block/mmcblk0p3      0660   system     media_rw
+
+#for DivX
+/dev/block/mmcblk0p12      0660  media     lgdrm_acc
+
+#for factory reset
+/dev/block/mmcblk0p14     0660   system     media_rw
+
 #LGE_CHANGE_S : ART, ETA2 : root -> system
 /dev/graphics/*           0660   system     graphics
 /dev/input/*              0660   system     input
@@ -58,26 +68,13 @@
 
 # LGE_BROADCAST_TDMB {
 /dev/broadcast0           0660  media        media
-/dev/graphics/fb0         0666  root         graphics
+#/dev/graphics/fb0         0666  root         graphics
 # LGE_BROADCAST_TDMB }
 # LGE_ADD_START, 20120202 dongki.cheon@lge.com, set permission nv and misc for CTS Pass
-/dev/block/mmcblk0p6 0660 system media_rw
-/dev/block/mmcblk0p7 0660 system media_rw
+#/dev/block/mmcblk0p6 0660 system media_rw
+#/dev/block/mmcblk0p7 0660 system media_rw
 # LGE_ADD_END
-# LGE_BROADCAST_1SEG_START, 2012-04-11 taew00k.kang
-/dev/isdbt                0666   system    system
-# LGE_BROADCAST_1SEG_END, 2012-04-11 taew00k.kang
+# LGE_UPDATE_S, 20120523 ntheungbok.lee@lge.com, set permission nv2 for widevine 
+#/dev/block/mmcblk0p3 0660 system media_rw duplicated
+# LGE_UPDATE_E
 
-# FeliCa; DOCOMO specific [
-/dev/felica               0666  mfc       system
-/dev/felica_cen           0460  mfc       felicalock
-/dev/felica_pon           0666  mfc       system
-/dev/felica_rfs           0440  mfc       mfc
-/dev/felica_rws           0440  mfc       mfc
-/dev/ttyO3                0666  mfc       system
-/dev/i2c-2                0666  mfc       felicalock
-/dev/felica_cal           0666  mfc       mfc
-
-#/dev/factory_ffpd         0666  system    system
-#/dev/factory_ffd          0666  system    system
-# ] FeliCa

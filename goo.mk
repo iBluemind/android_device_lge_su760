@@ -11,4 +11,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # include goo manager
 PRODUCT_COPY_FILES += \
-       device/lge/p940/prebuilt/GooManager.apk:system/app/GooManager.apk
+       device/lge/su760/prebuilt/GooManager.apk:system/app/GooManager.apk

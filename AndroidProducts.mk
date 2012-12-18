@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_p940.mk
+    $(LOCAL_DIR)/full_su760.mk

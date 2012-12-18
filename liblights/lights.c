@@ -41,7 +41,7 @@ static int g_enable_touchlight = -1;
 static int g_touchled_on = 0;
 
 char const*const LCD_FILE
-        = "/sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0038/brightness";
+        = "/sys/devices/platform/omap/omap_i2c.2/i2c-2/2-0036/brightness";
 
 char const*const BUTTON_BRIGHTNESS
         = "/sys/devices/platform/keypad_led/leds/button-backlight/brightness";
