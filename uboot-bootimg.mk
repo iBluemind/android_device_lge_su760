@@ -54,7 +54,7 @@ endif
         INTERNAL_UMULTIIMAGE_ARGS += -d $(INSTALLED_KERNEL_TARGET):$(BUILT_RAMDISK_TARGET)
 $(INSTALLED_BOOTIMAGE_TARGET): $(MKIMAGE) $(INTERNAL_RAMDISK_FILES) $(BUILT_RAMDISK_TARGET) $(INSTALLED_KERNEL_TARGET)
 $(MKIMAGE) $(INTERNAL_UMULTIIMAGE_ARGS) $@
-@echo ----- Made uboot multiimage -------- $@
+#@echo ----- Made uboot multiimage -------- $@
 
 endif #!TARGET_NO_KERNEL
 endif
@@ -91,7 +91,7 @@ INTERNAL_RECOVERYIMAGE_ARGS += -d $(UBOOT_DATA_ARGS)
 $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKIMAGE) \
                $(recovery_ramdisk) \
                $(recovery_kernel)
-@echo ----- Making recovery uboot image ------
+#@echo ----- Making recovery uboot image ------
 $(MKIMAGE) $(INTERNAL_RECOVERYIMAGE_ARGS) $@
-@echo ----- Made recovery uboot image -------- $@
+#@echo ----- Made recovery uboot image -------- $@
 endif
