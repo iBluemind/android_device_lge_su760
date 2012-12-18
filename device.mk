@@ -41,9 +41,6 @@ PRODUCT_COPY_FILES := \
 	device/lge/su760/config/gps_brcm_conf.xml:system/etc/gps_brcm_conf.xml \
 	device/lge/su760/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
-PRODUCT_COPY_FILES += \
-	device/lge/su760/prebuilt/init.d/01modules:system/etc/init.d/01modules
-
 # keylayouts and touchscreen
 PRODUCT_COPY_FILES += \
 	device/lge/su760/config/touch_dev.kl:system/usr/keylayout/touch_dev.kl \
@@ -62,10 +59,6 @@ PRODUCT_COPY_FILES += \
 
 ## WPAN
 PRODUCT_PACKAGES += uim-sysfs
-
-# Wifi
-PRODUCT_COPY_FILES += \
-	device/lge/su760/config/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
 
 PRODUCT_PROPERTY_OVERRIDES := \
 	wifi.interface=wlan0 \
@@ -175,10 +168,6 @@ PRODUCT_PACKAGES += \
 	setup_fs
 
 $(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
-# goo.im stuff
-$(call inherit-product, device/lge/su760/goo.mk)
-
 $(call inherit-product-if-exists, vendor/nxp/pn544/nxp-pn544-fw-vendor.mk)
 $(call inherit-product-if-exists, vendor/ti/proprietary/omap4/ti-omap4-vendor.mk)
-
 $(call inherit-product-if-exists, vendor/lge/su760/device-vendor.mk)

@@ -10,9 +10,6 @@ TARGET_BOOTANIMATION_NAME := vertical-480x800
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-# Enhanced NFC
-$(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
-
 # Inherit device configuration
 $(call inherit-product, device/lge/su760/full_su760.mk)
 
