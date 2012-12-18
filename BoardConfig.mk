@@ -97,7 +97,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
 
 BOARD_RECOVERY_ALWAYS_WIPES := true
 TARGET_RECOVERY_INITRC := device/lge/su760/recovery/init.rc
-BOARD_UMS_LUNFILE := "/sys/devices/virtual/android_usb/android0/f_mass_storage/lun0/file"
 TARGET_RECOVERY_PRE_COMMAND := "echo boot-recovery | dd of=/dev/block/mmcblk0p14 bs=1;"
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HDPI_RECOVERY := true
