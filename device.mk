@@ -32,9 +32,9 @@ PRODUCT_PACKAGES += \
 	libaudioutils
 
 PRODUCT_COPY_FILES := \
-	device/lge/su760/init.su760.rc:root/init.su760.rc \
+	device/lge/su760/init.lgesu760board.rc:root/init.lgesu760board.rc \
 	device/lge/su760/init.su760.usb.rc:root/init.su760.usb.rc \
-	device/lge/su760/ueventd.su760.rc:root/ueventd.su760.rc \
+	device/lge/su760/ueventd.lgesu760board.rc:root/ueventd.lgesu760board.rc \
 	device/lge/su760/prebuilt/init.rmnet:system/bin/init.rmnet \
 	device/lge/su760/prebuilt/init.rmnet-down:system/bin/init.rmnet-down \
 	device/lge/su760/config/media_profiles.xml:system/etc/media_profiles.xml \
