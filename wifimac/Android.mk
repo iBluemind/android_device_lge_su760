@@ -20,7 +20,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_SRC_FILES := wifimac.c
+LOCAL_SRC_FILES := getmac.c
 
 LOCAL_PRELINK_MODULE := false
 
