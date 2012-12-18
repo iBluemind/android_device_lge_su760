@@ -61,10 +61,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 	device/lge/su760/prebuilt/lib/ti-bluez-ko/bluetooth.ko:system/lib/ti-bluez-ko/bluetooth.ko \
 	device/lge/su760/prebuilt/lib/ti-bluez-ko/btwilink.ko:system/lib/ti-bluez-ko/btwilink.ko \
-	device/lge/su760/prebuilt/lib/ti-bluez-ko/rfcomm.ko:system/lib/ti-bluez-ko/rfcomm.ko
-
-## WPAN
-PRODUCT_PACKAGES += uim-sysfs
+	device/lge/su760/prebuilt/lib/ti-bluez-ko/rfcomm.ko:system/lib/ti-bluez-ko/rfcomm.ko \
+	device/lge/su760/prebuilt/lib/ti-bluez-ko/bnep.ko:system/lib/ti-bluez-ko/bnep.ko
 
 # Wifi
 PRODUCT_COPY_FILES += \

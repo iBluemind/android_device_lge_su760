@@ -74,11 +74,10 @@ on fs
 
 #TIK_BlueTI
 #Bluetooth
-	insmod /system/lib/ti-bluez-ko/bluetooth.ko force_acl_master=1 enable_mgmt=1 enable_le=1
+	insmod /system/lib/ti-bluez-ko/bluetooth.ko # force_acl_master=1 enable_mgmt=1 enable_le=1
 	insmod /system/lib/ti-bluez-ko/rfcomm.ko
-#	insmod /system/lib/ti-bluez-ko/hidp.ko
 	insmod /system/lib/ti-bluez-ko/btwilink.ko
-#	insmod /system/lib/ti-bluez-ko/bnep.ko
+	insmod /system/lib/ti-bluez-ko/bnep.ko
 #TIK_End
 
 insmod /system/lib/modules/omaplfb_sgx540_120.ko
@@ -131,20 +130,16 @@ on post-fs-data
     chmod 0770 /data/audio
 
 #TIK_BlueTI
-# change permissions for Bluetooth/FM/GPS
-    chmod 0600 /sys/class/rfkill/rfkill0/state
+
+    chmod 0660 /sys/class/rfkill/rfkill0/state
     chmod 0660 /sys/class/rfkill/rfkill0/type
+    chmod 0660 /sys/class/rfkill/rfkill1/state
+    chmod 0660 /sys/class/rfkill/rfkill1/type
+
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
-
-    chmod 0600 /dev/ttyO1
-    chown bluetooth bluetooth /dev/ttyO1
-
-    chmod 0660 /sys/devices/platform/bd_address/bdaddr_if
-    chown radio radio /sys/devices/platform/bd_address/bdaddr_if
-
-    mkdir /data/data/btips 0777 bluetooth bluetooth
-    mkdir /data/data/btips/TI 0777 bluetooth bluetooth
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill1/state
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill1/type
 #TIK_End
 
 
@@ -412,6 +407,13 @@ service uim /system/bin/uim-sysfs
     user bluetooth
     group bluetooth net_bt_admin	
 #TIK_End
+
+service hciattach /system/bin/hciattach -l
+    class main
+    user root
+    group bluetooth net_bt_admin misc
+    disabled
+    oneshot
 
 service rawip_rmnet1 /system/bin/init.rmnet 1
     class main
