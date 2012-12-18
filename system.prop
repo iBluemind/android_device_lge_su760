@@ -4,7 +4,7 @@
 telephony.lteOnCdmaDevice=0
 
 # Define modem related settings
-mobiledata.interfaces=rmnet0,rmnet1,rmnet2
+mobiledata.interfaces=rmnet0
 ro.radio.use-ppp=no
 ro.config.nocheckin=yes
 
