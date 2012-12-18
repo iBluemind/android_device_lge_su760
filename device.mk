@@ -55,10 +55,24 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
-	system/bluetooth/data/main.le.conf:system/etc/bluetooth/main.conf
+	system/bluetooth/data/main.conf:system/etc/bluetooth/main.conf
 
 ## WPAN
 PRODUCT_PACKAGES += uim-sysfs
+
+# Wifi (Kernel_Modules)
+PRODUCT_COPY_FILES += \
+    	device/lge/su760/prebuilt/lib/modules/cfg80211.ko:system/lib/modules/cfg80211.ko \
+    	device/lge/su760/prebuilt/lib/modules/compat.ko:system/lib/modules/compat.ko \
+    	device/lge/su760/prebuilt/lib/modules/mac80211.ko:system/lib/modules/mac80211.ko \
+    	device/lge/su760/prebuilt/lib/modules/wl12xx.ko:system/lib/modules/wl12xx.ko \
+    	device/lge/su760/prebuilt/lib/modules/wl12xx_sdio.ko:system/lib/modules/wl12xx_sdio.ko
+
+# Bluetooth (Kernel_Modules)
+PRODUCT_COPY_FILES += \
+	device/lge/su760/prebuilt/lib/ti-bluez-ko/bluetooth.ko:system/lib/ti-bluez-ko/bluetooth.ko \
+	device/lge/su760/prebuilt/lib/ti-bluez-ko/btwilink.ko:system/lib/ti-bluez-ko/btwilink.ko \
+	device/lge/su760/prebuilt/lib/ti-bluez-ko/rfcomm.ko:system/lib/ti-bluez-ko/rfcomm.ko
 
 PRODUCT_PROPERTY_OVERRIDES := \
 	wifi.interface=wlan0 \
@@ -68,9 +82,11 @@ PRODUCT_PROPERTY_OVERRIDES := \
 PRODUCT_PACKAGES += \
 	lights.su760 \
 	wifimac \
+	wifical.sh \
     	calibrator \
 	crda \
-	regulatory.bin
+	regulatory.bin \
+	dhcpcd.conf
 
 # Live Wallpapers
 PRODUCT_PACKAGES += \
