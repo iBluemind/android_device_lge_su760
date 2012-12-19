@@ -140,4 +140,6 @@
         <item>10</item>
     </integer-array>
 
+    <bool name="config_autoBrightnessButtonKeyboard">false</bool>
+
 </resources>
