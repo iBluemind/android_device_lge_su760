@@ -50,16 +50,14 @@ char const*const BUTTON_BRIGHTNESS
  * device methods
  */
 
-void
-init_globals(void)
-{
+void init_globals(void)
+{	
     // init the mutex
     pthread_mutex_init(&g_lock, NULL);
 
 }
 
-void
-load_settings()
+void load_settings()
 {
     FILE* fp = fopen("/data/.disable_touchlight", "r");
     if (!fp) {
@@ -76,8 +74,7 @@ load_settings()
     }
 }
 
-static int
-write_int(char const* path, int value)
+static int write_int(char const* path, int value)
 {
     int fd;
     static int already_warned = 0;
@@ -98,8 +95,7 @@ write_int(char const* path, int value)
     }
 }
 
-static int
-read_int(char const* path)
+static int read_int(char const* path)
 {
     int fd;
 
@@ -114,22 +110,19 @@ read_int(char const* path)
     }
 }
 
-static int
-is_lit(struct light_state_t const* state)
+static int is_lit(struct light_state_t const* state)
 {
     return state->color & 0x00ffffff;
 }
 
-static int
-rgb_to_brightness(struct light_state_t const* state)
+static int rgb_to_brightness(struct light_state_t const* state)
 {
     int color = state->color & 0x00ffffff;
     return ((77*((color>>16)&0x00ff))
             + (150*((color>>8)&0x00ff)) + (29*(color&0x00ff))) >> 8;
 }
 
-static int
-set_light_buttons(struct light_device_t* dev,
+static int set_light_buttons(struct light_device_t* dev,
         struct light_state_t const* state)
 {
     int err = 0;
@@ -143,8 +136,7 @@ set_light_buttons(struct light_device_t* dev,
     return err;
 }
 
-static int
-set_light_backlight(struct light_device_t* dev,
+static int set_light_backlight(struct light_device_t* dev,
         struct light_state_t const* state)
 {
     int err = 0;
@@ -164,8 +156,7 @@ set_light_backlight(struct light_device_t* dev,
     return err;
 }
 
-static int
-set_light_notifications(struct light_device_t* dev,
+static int set_light_notifications(struct light_device_t* dev,
         struct light_state_t const* state)
 {
     int err = 0;
@@ -184,8 +175,7 @@ set_light_notifications(struct light_device_t* dev,
 }
 
 /** Close the lights device */
-static int
-close_lights(struct light_device_t *dev)
+static int close_lights(struct light_device_t *dev)
 {
     if (dev) {
         free(dev);
