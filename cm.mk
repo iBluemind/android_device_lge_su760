@@ -17,7 +17,7 @@ $(call inherit-product, device/lge/su760/full_su760.mk)
 PRODUCT_DEVICE := su760
 PRODUCT_NAME := cm_su760
 PRODUCT_BRAND := lge
-PRODUCT_MODEL := LG Optimus 3D
+PRODUCT_MODEL := LG-SU760
 PRODUCT_MANUFACTURER := LGE
 
 #Set build fingerprint / ID / Product Name ect.
