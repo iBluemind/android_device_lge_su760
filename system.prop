@@ -20,6 +20,7 @@ ro.telephony.call_ring.absent=true
 rild.libpath=/system/lib/lge-ril.so
 mobiledata.interfaces=rmnet0
 ro.telephony.ril_class=LGEInfineon
+telephony.test.ignore.nitz=true
 
 ro.opengles.version=131072
 dalvik.vm.dexopt-data-only=1
