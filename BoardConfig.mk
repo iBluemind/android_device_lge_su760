@@ -63,7 +63,7 @@ BOARD_WPAN_DEVICE := true
 
 BOARD_HAS_NO_MISC_PARTITION := true
 
-TARGET_RECOVERY_PRE_COMMAND := "echo 1 > /data/.recovery_mode; sync;"
+TARGET_RECOVERY_PRE_COMMAND := "echo boot-recovery | dd of=/dev/block/mmcblk0p14 bs=1;"
 
 TARGET_BOOTLOADER_BOARD_NAME := su760
 
