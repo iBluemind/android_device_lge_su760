@@ -1,8 +1,6 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
 $(call inherit-product-if-exists, vendor/lge/su760/su760-vendor.mk)
 
-$(call inherit-product, device/common/gps/gps_eu.mk)
+$(call inherit-product, device/common/gps/gps_as.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/lge/su760/overlay
 
@@ -154,7 +152,7 @@ PRODUCT_PACKAGES += \
 ## WPAN
 PRODUCT_PACKAGES += uim-sysfs
 
-#PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_su760
 PRODUCT_DEVICE := su760
 PRODUCT_MODEL := LG-SU760
