@@ -78,8 +78,7 @@ PRODUCT_PACKAGES += \
     tiap_loader \
     tiap_cu \
     libaudioutils \
-    audio.a2dp.default \
-    audio_policy.default
+    audio.a2dp.default
 
 # Graphics
 # Newer libs are b0rked, use original props

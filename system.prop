@@ -34,7 +34,19 @@ ro.com.google.clientidbase.am=android-lge
 ## Config the microphones
 omap.audio.mic.main=AMic0
 omap.audio.mic.sub=AMic1
-omap.audio.power=PingPong
+omap.audio.power=HQ
+
+persist.sys.system_volume=7
+persist.sys.sound_enable=2
+
+alsa.mixer.playback.master=DAC2 Analog
+alsa.mixer.capture.master=Analog
+
+ro.lge.audio_soundexception=true
+ro.lge.audio_soundprofile=true
+
+# set high quality mode android resampler
+af.resampler.quality=3
 
 ## CM toggle for TI Hotspot
 wifi.hotspot.ti=true
@@ -43,4 +55,3 @@ persist.sys.usb.config=mtp,adb
 
 ## Limit activities
 sys.mem.max_hidden_apps=5
-
