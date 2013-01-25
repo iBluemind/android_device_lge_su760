@@ -1,8 +1,6 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
 $(call inherit-product-if-exists, vendor/lge/su760/su760-vendor.mk)
 
-$(call inherit-product, device/common/gps/gps_eu.mk)
+$(call inherit-product, device/common/gps/gps_as.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/lge/su760/overlay
 
@@ -43,9 +41,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ipc_channels.config:system/etc/ipc_channels.config
 
-# Radio fixes
-FRAMEWORKS_BASE_SUBDIRS += ../../$(LOCAL_PATH)/ril/
-
 # Permission files
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -65,10 +60,6 @@ PRODUCT_COPY_FILES += \
 ## GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps_brcm_conf.xml:system/etc/gps_brcm_conf.xml
-
-## Camera
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/libcameraservice.so:system/lib/libcameraservice.so
 
 $(call inherit-product, build/target/product/full.mk)
 
@@ -130,7 +121,7 @@ PRODUCT_PACKAGES += \
     libtimemmgr
 
 FRAMEWORKS_BASE_SUBDIRS += \
-	$(addsuffix /java, omapmmlib )
+	$(addsuffix /java, omapmmlib)
 
 #FRAMEWORKS_BASE_SUBDIRS += \
 #	../../$(LOCAL_PATH)/framework-addons/
